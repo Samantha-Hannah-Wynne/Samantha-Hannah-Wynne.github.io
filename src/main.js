@@ -186,7 +186,7 @@ function openProject(id) {
   if (id === 'ravaged') initStory();
   if (id === 'web') initWebPreview();
 }
-$$('button.project-card, .project-details').forEach((button) => {
+$$('button.project-preview, .project-details').forEach((button) => {
   button.addEventListener('click', () => openProject(button.dataset.project));
 });
 $('.close-dialog').addEventListener('click', () => dialog.close());

@@ -77,8 +77,9 @@
       <section id="work" class="work-section section-shell" aria-labelledby="software-title">
         <div class="section-top reveal"><span class="eyebrow">01 / SOFTWARE DEVELOPMENT</span><span class="muted small">Code, systems, and interactive experiences.</span></div>
         <div class="section-heading-row reveal"><h2 id="software-title">Software development.<br /><span class="serif-text">Ideas into action.</span></h2><div class="work-filters" role="group" aria-label="Filter software projects"><button class="filter active" data-filter="all" aria-pressed="true">All projects <sup>03</sup></button><button class="filter" data-filter="software" aria-pressed="false">Apps & systems</button><button class="filter" data-filter="creative" aria-pressed="false">Web & games</button></div></div>
-        <div class="project-grid">
-          <button class="project-card reveal" data-project="traffic" data-category="software" aria-labelledby="traffic-title">
+        <div class="project-grid project-showcase">
+          <article class="project-card reveal" data-project="traffic" data-category="software">
+            <button class="project-preview" data-project="traffic" aria-labelledby="traffic-title">
             <div class="project-visual traffic-visual">
               <span class="visual-label">CONNECTED SYSTEMS / 01</span>
               <div class="traffic-road road-one"></div><div class="traffic-road road-two"></div>
@@ -87,22 +88,20 @@
               <span class="visual-caption"><span class="status-dot"></span> SMALL BOARD. REAL-WORLD LOGIC.</span>
               <span class="project-open">↗</span>
             </div>
-            <div class="project-info"><div><h3 id="traffic-title">Making every signal count.</h3><p>Traffic light management system</p></div><span class="project-index">01</span></div>
-            <div class="tags"><span>Python</span><span>Raspberry Pi</span><span>Embedded systems</span></div>
-          </button>
+            <div class="showcase-copy"><span class="showcase-number" aria-hidden="true">01</span><span class="eyebrow">CODE MEETS THE REAL WORLD</span><div class="project-info"><div><h3 id="traffic-title">Making every<br />signal count.</h3><p>Traffic light management system</p></div></div><p class="showcase-description">A small board with a real-world job. Programming logic meets embedded systems in a Raspberry Pi traffic-light controller.</p><div class="tags"><span>Python</span><span>Raspberry Pi</span><span>Embedded systems</span></div><span class="showcase-cta">Try the signal demo <span aria-hidden="true">↗</span></span></div>
+            </button>
+          </article>
           <article class="project-card reveal" data-project="ravaged" data-category="creative">
             <a class="project-preview" href="https://samantha-hannah-wynne.github.io/Ravaged/" aria-labelledby="ravaged-title">
             <div class="project-visual horror-visual"><span class="visual-label">INTERACTIVE STORYTELLING / 02</span><div class="horror-moon"></div><div class="forest"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="horror-title"><span>EVERY CHOICE LEAVES A MARK.</span><strong>RAVAGED</strong><span>WILL YOU FIND YOUR WAY OUT?</span></div><span class="project-open">↗</span></div>
-            <div class="project-info"><div><h3 id="ravaged-title">Your choices. Your consequences.</h3><p>Ravaged — interactive horror game</p></div><span class="project-index">02</span></div>
-            <div class="tags"><span>Python</span><span>Branching narratives</span><span>Game development</span></div>
+            <div class="showcase-copy"><span class="showcase-number" aria-hidden="true">02</span><span class="eyebrow">STEP INSIDE THE STORY</span><div class="project-info"><div><h3 id="ravaged-title">Your choices.<br />Your consequences.</h3><p>Ravaged — interactive horror game</p></div></div><p class="showcase-description">A choice-driven horror game where every decision changes the story. Built in Python, ready to play in your browser.</p><div class="tags"><span>Python</span><span>Branching narratives</span><span>Game development</span></div><span class="showcase-cta">Play Ravaged <span aria-hidden="true">↗</span></span></div>
             </a>
             <button class="project-details" data-project="ravaged">Project story & concept demo <span aria-hidden="true">+</span></button>
           </article>
           <article class="project-card reveal" data-project="web" data-category="creative">
             <a class="project-preview" href="https://samantha-hannah-wynne.github.io/Portfolio-WebPage/index.html" aria-labelledby="web-title">
             <div class="project-visual web-visual"><span class="visual-label">DESIGN MEETS DEVELOPMENT / 03</span><div class="browser-mock"><div class="browser-bar"><span>● ● ●</span><span>made for people.</span><span>↗</span></div><div class="web-mock-content"><span class="mock-brand">form<span>®</span></span><span class="mock-nav">Ideas. Made real.</span><h4>Good design.<br /><em>Great feeling.</em></h4><span class="mock-button">A little exploration ↗</span><div class="mock-flower">✳</div><div class="mock-foot">THOUGHTFULLY DESIGNED. CAREFULLY BUILT.</div></div></div><span class="project-open">↗</span></div>
-            <div class="project-info"><div><h3 id="web-title">Made for the people using it.</h3><p>Web development project</p></div><span class="project-index">03</span></div>
-            <div class="tags"><span>HTML & CSS</span><span>Accessibility</span><span>SEO</span></div>
+            <div class="showcase-copy"><span class="showcase-number" aria-hidden="true">03</span><span class="eyebrow">DESIGNED TO FEEL RIGHT</span><div class="project-info"><div><h3 id="web-title">Made for the<br />people using it.</h3><p>Web development project</p></div></div><p class="showcase-description">A usable website built around the people on the other side of the screen, with accessibility and thoughtful client-side development.</p><div class="tags"><span>HTML & CSS</span><span>Accessibility</span><span>SEO</span></div><span class="showcase-cta">Visit the website <span aria-hidden="true">↗</span></span></div>
             </a>
             <button class="project-details" data-project="web">Project story & concept demo <span aria-hidden="true">+</span></button>
           </article>
@@ -183,7 +182,7 @@
 
       <section class="skills-section section-shell">
         <div class="section-top reveal"><span class="eyebrow">04 / MY TOOLBOX</span><span class="muted small">Always learning. Always adding.</span></div>
-        <div class="skills-heading reveal"><h2>Tools of <span class="serif-text">the trade.</span></h2><p>The foundations I’m building on.<br />The possibilities I’m exploring.</p></div>
+        <div class="skills-heading reveal"><h2>Tools of <span class="serif-text">the trade.</span></h2><p>The foundations I’m building on.<br />The possibilities I’m exploring.<br /><a class="text-link" href="#badges">Explore my credentials <span aria-hidden="true">↓</span></a></p></div>
         <div class="skill-grid">
           <article class="skill-card reveal"><span class="skill-symbol">&lt;/&gt;</span><h3>Code & craft</h3><p>Python · C# · HTML · CSS · SQL</p><div>Object-oriented programming<br />Algorithms & data structures<br />Web development & databases</div></article>
           <article class="skill-card reveal"><span class="skill-symbol">⌘</span><h3>Systems & scale</h3><p>Raspberry Pi · Linux · AWS · Azure</p><div>Computer architecture<br />Operating systems & networking<br />Cloud computing</div></article>
@@ -191,8 +190,39 @@
         </div>
       </section>
 
+      <section id="badges" class="credentials-section section-shell" aria-labelledby="credentials-title">
+        <div class="section-top reveal"><span class="eyebrow">05 / BADGES & CERTIFICATES</span><span class="muted small">Curiosity, with something to show for it.</span></div>
+        <div class="credentials-heading reveal"><h2 id="credentials-title">Always a student.<br /><span class="serif-text">Always a little further.</span></h2><p>From cloud foundations to working with AI.<br />Every card links to my official credential.</p></div>
+        <div class="credential-group-heading reveal"><h3>AWS Educate</h3><span>TRAINING BADGES / 02</span></div>
+        <div class="credential-grid aws-credentials">
+          <a class="credential-card reveal" href="https://www.credly.com/badges/960d447b-8914-4137-a5db-8512cdc1989c" aria-labelledby="compute-badge-title">
+            <div class="credential-art aws-art"><img src="/credentials/aws-compute.png" alt="Official AWS Educate Getting Started with Compute training badge" width="672" height="352" loading="lazy" decoding="async" /></div>
+            <div class="credential-copy"><span class="eyebrow">AWS EDUCATE</span><h4 id="compute-badge-title">Getting Started with Compute</h4><p>Amazon Web Services Training and Certification</p><p class="credential-description">Compute foundations and creating an instance with Amazon EC2.</p><span class="credential-link">Verify on Credly <span aria-hidden="true">↗</span></span></div>
+          </a>
+          <a class="credential-card reveal" href="https://www.credly.com/badges/eca8c83a-208a-4ec0-ae42-0acc96d71bb5" aria-labelledby="storage-badge-title">
+            <div class="credential-art aws-art"><img src="/credentials/aws-storage.png" alt="Official AWS Educate Getting Started with Storage training badge" width="672" height="352" loading="lazy" decoding="async" /></div>
+            <div class="credential-copy"><span class="eyebrow">AWS EDUCATE</span><h4 id="storage-badge-title">Getting Started with Storage</h4><p>Amazon Web Services Training and Certification</p><p class="credential-description">Storage solutions and storing and retrieving objects with Amazon S3.</p><span class="credential-link">Verify on Credly <span aria-hidden="true">↗</span></span></div>
+          </a>
+        </div>
+        <div class="credential-group-heading reveal"><h3>Anthropic</h3><span>COURSE COMPLETIONS / 03</span></div>
+        <div class="credential-grid anthropic-credentials">
+          <a class="credential-card reveal" href="https://verify.skilljar.com/c/i57dgack8y6u" aria-labelledby="ai-certificate-title">
+            <div class="credential-art"><img src="/credentials/anthropic-ai-capabilities.jpg" alt="Anthropic certificate confirming Samantha Hannah Wynne completed AI Capabilities and Limitations" width="3300" height="2550" loading="lazy" decoding="async" /></div>
+            <div class="credential-copy"><span class="eyebrow">ANTHROPIC · AUG 2026</span><h4 id="ai-certificate-title">AI Capabilities and Limitations</h4><p>Certificate of completion</p><span class="credential-id">ID: i57dgack8y6u</span><span class="credential-link">View credential <span aria-hidden="true">↗</span></span></div>
+          </a>
+          <a class="credential-card reveal" href="https://verify.skilljar.com/c/9qi76s8es95z" aria-labelledby="code-certificate-title">
+            <div class="credential-art"><img src="/credentials/anthropic-claude-code-101.jpg" alt="Anthropic certificate confirming Samantha Hannah Wynne completed Claude Code 101" width="3300" height="2550" loading="lazy" decoding="async" /></div>
+            <div class="credential-copy"><span class="eyebrow">ANTHROPIC · AUG 2026</span><h4 id="code-certificate-title">Claude Code 101</h4><p>Certificate of completion</p><span class="credential-id">ID: 9qi76s8es95z</span><span class="credential-link">View credential <span aria-hidden="true">↗</span></span></div>
+          </a>
+          <a class="credential-card reveal" href="https://verify.skilljar.com/c/nfxuc3erujmw" aria-labelledby="claude-certificate-title">
+            <div class="credential-art"><img src="/credentials/anthropic-claude-101.jpg" alt="Anthropic certificate confirming Samantha Hannah Wynne completed Claude 101" width="3300" height="2550" loading="lazy" decoding="async" /></div>
+            <div class="credential-copy"><span class="eyebrow">ANTHROPIC · AUG 2026</span><h4 id="claude-certificate-title">Claude 101</h4><p>Certificate of completion</p><span class="credential-id">ID: nfxuc3erujmw</span><span class="credential-link">View credential <span aria-hidden="true">↗</span></span></div>
+          </a>
+        </div>
+      </section>
+
       <section id="journey" class="journey-section section-shell">
-        <div class="section-top reveal"><span class="eyebrow">05 / CONNECTING THE DOTS</span><span class="muted small">Every chapter adds something.</span></div>
+        <div class="section-top reveal"><span class="eyebrow">06 / CONNECTING THE DOTS</span><span class="muted small">Every chapter adds something.</span></div>
         <div class="journey-layout"><div class="journey-intro reveal"><h2>Not a straight line.<br /><span class="serif-text">A good story.</span></h2><p>From music rooms to data dashboards.<br />Here’s what’s shaped the way I think.</p><div class="journey-doodle" aria-hidden="true">↝</div></div><div class="timeline">
           <article class="timeline-item reveal"><span class="timeline-date">APR — JUN 2026</span><span class="timeline-type">EXPERIENCE</span><h3>Finding the story in the data.</h3><h4>Logistics Data Analyst · Phoenix Logistics India</h4><p>Analysed shipment and delivery data, prepared KPI reports and dashboards, and supported route and cost optimisation. Turned findings into clear insights for management.</p><span class="timeline-location">Chennai, India ↗</span></article>
           <article class="timeline-item reveal"><span class="timeline-date">2024 — 2028</span><span class="timeline-type">EDUCATION</span><h3>Building a strong foundation.</h3><h4>BSc (Hons) Computing — Data Analytics & Big Data · Dublin Business School</h4><p>Exploring statistics, information systems, databases, software engineering, and cloud computing—and how they support better analysis and better software.</p><span class="timeline-location">Dublin, Ireland ↗</span></article>
@@ -201,7 +231,7 @@
       </section>
 
       <section id="extracurriculars" class="recognition-section section-shell" aria-labelledby="recognition-title">
-        <div class="section-top reveal"><span class="eyebrow">06 / EXTRACURRICULARS & RECOGNITION</span><a class="text-link" href="#volunteering">A little giving back <span aria-hidden="true">↓</span></a></div>
+        <div class="section-top reveal"><span class="eyebrow">07 / EXTRACURRICULARS & RECOGNITION</span><a class="text-link" href="#volunteering">A little giving back <span aria-hidden="true">↓</span></a></div>
         <div class="beyond-heading reveal"><h2 id="recognition-title">A voice. A little courage.<br /><span class="serif-text">A few proud moments.</span></h2><p>Certificates and awards beyond the classroom. Open a card for the story.</p></div>
         <div class="recognition-grid">
           <details class="recognition-card reveal">
@@ -217,7 +247,7 @@
       </section>
 
       <section id="volunteering" class="volunteer-section section-shell" aria-labelledby="volunteer-title">
-        <div class="section-top reveal"><span class="eyebrow">07 / SMALL ACTS, REAL HEART</span><span class="muted small">A little time. A little creativity. A lot of care.</span></div>
+        <div class="section-top reveal"><span class="eyebrow">08 / SMALL ACTS, REAL HEART</span><span class="muted small">A little time. A little creativity. A lot of care.</span></div>
         <div class="volunteer-heading reveal"><div><h2 id="volunteer-title">Good things grow<br /><span class="serif-text">when we give.</span></h2><p>Two little postcards from the things I’ve been part of.<br />Tap a heart to open the story.</p></div><span class="volunteer-flower" aria-hidden="true">✿</span></div>
         <div class="volunteer-grid">
           <details class="volunteer-postcard reveal">
