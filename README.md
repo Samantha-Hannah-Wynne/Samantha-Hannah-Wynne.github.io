@@ -23,7 +23,9 @@ Open the local URL printed by Vite. Use `npm run build` to create the production
 - A short personal story about moving from Chennai to Ireland at 17 to pursue computer science.
 - A dedicated `#analytics` section with logistics experience, expandable analytics skills, related work, and an analytics-specific contact link. Navigation, introductory copy, and metadata cover both software development and data analytics.
 - Separate software and data analytics CV downloads, preserving the original PDFs. Analytics content is based on the supplied résumé, with no invented performance metrics or employer data.
-- Both PDFs are current, role-specific CVs, not older/newer versions. The Software Development section pairs its four projects with the software CV; the Data Analytics section pairs all four projects listed in that CV with the analytics CV. Expense Tracker and Web Development appear in both because both CVs include them.
+- Both PDFs are current, role-specific CVs. Software Development contains the traffic-light system, Ravaged, and web project with the software CV. Expense Tracker appears only in Data Analytics, alongside the analytics CV; software filters do not affect it.
+- Extracurricular recognition cards expand to show the résumé-listed Best Debater competitions and H.H Radha Devi Award. These are portfolio designs, not fabricated certificate scans.
+- Interactive volunteering postcards cover JOG’24 and Me to We, using native details/summary controls that support touch, keyboard, and use without JavaScript.
 - Live Ravaged and original website links in the work section and project explorers, email copying, Dublin local time, mobile navigation, and downloadable résumé.
 - Live project cards navigate directly to their websites; separate buttons retain the concept demos. External links, including LinkedIn, use same-tab navigation so embedded previews do not depend on popup/new-window support.
 - Keyboard navigation, focus management, reduced-motion support, and responsive layouts.

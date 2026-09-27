@@ -95,7 +95,7 @@ $$('.filter').forEach((button) => button.addEventListener('click', () => {
     filter.classList.toggle('active', filter === button);
     filter.setAttribute('aria-pressed', String(filter === button));
   });
-  $$('.project-card').forEach((card) => {
+  $$('#work .project-card').forEach((card) => {
     card.hidden = button.dataset.filter !== 'all' && card.dataset.category !== button.dataset.filter;
     if (!card.hidden) card.classList.add('visible');
   });

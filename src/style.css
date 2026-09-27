@@ -378,7 +378,7 @@ dialog {
 .analytics-heading > p { font-size: 13px; line-height: 1.9; color: var(--muted); max-width: 60ch; }
 .analytics-heading strong { font-weight: 500; color: var(--text); }
 .analytics-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 36px; }
-.analytics-layout > *, .analytics-evidence > *, .analytics-contact > * { min-width: 0; }
+.analytics-layout > *, .analytics-project > *, .analytics-contact > * { min-width: 0; }
 .analytics-experience {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -411,14 +411,11 @@ dialog {
 .analytics-detail-body { padding: 0 0 24px 27px; }
 .analytics-detail-body p { font-size: 12px; color: var(--muted); line-height: 1.9; }
 .analytics-detail .tags span { font-size: 10px; }
-.analytics-evidence { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 20px; border-block: 1px solid var(--line); }
-.analytics-evidence article { padding: 28px 24px 28px 0; }
-.analytics-evidence article + article { border-left: 1px solid var(--line); padding-left: 24px; }
-.analytics-evidence article:nth-child(odd) { border-left: 0; padding-left: 0; }
-.analytics-evidence article:nth-child(n+3) { border-top: 1px solid var(--line); }
-.analytics-evidence .eyebrow { color: var(--lilac); font-size: 8px; letter-spacing: 1.2px; }
-.analytics-evidence h3 { font-size: 17px; font-weight: 500; line-height: 1.5; margin: 14px 0 10px; }
-.analytics-evidence p { font-size: 12px; line-height: 1.8; color: var(--muted); }
+.analytics-project { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: 36px; margin-top: 40px; padding-block: 36px; border-block: 1px solid var(--line); }
+.analytics-project .project-visual { height: 340px; border-radius: 8px; }
+.analytics-project-copy h3 { font-size: clamp(26px, 3vw, 38px); font-weight: 500; margin: 16px 0; letter-spacing: -1px; }
+.analytics-project-copy p { font-size: 13px; line-height: 1.9; color: var(--muted); }
+.analytics-project-copy .project-demo-note { font-size: 10px; margin-top: 10px; }
 .analytics-contact { margin-top: 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px 36px; }
 .analytics-contact > div:first-child { flex: 1 1 300px; }
 .analytics-contact h3 { font-size: 24px; font-weight: 500; letter-spacing: -.6px; line-height: 1.4; margin-top: 12px; }
@@ -427,12 +424,53 @@ dialog {
 .analytics-actions .button { gap: 20px; line-height: 1.7; }
 .analytics-actions .text-link { margin-top: 6px; }
 .resume-links { display: flex; gap: 10px 26px; flex-wrap: wrap; }
-.career-section-intro { max-width: 75ch; font-size: 13px; line-height: 1.9; color: var(--muted); margin: -16px 0 32px; }
-.career-section-intro a { color: var(--lilac); text-decoration: underline; text-underline-offset: 4px; }
-.analytics-projects-heading { margin-top: 36px; }
-.analytics-projects-heading h3 { font-size: 21px; font-weight: 500; line-height: 1.5; }
-.analytics-projects-heading p { font-size: 12px; line-height: 1.8; color: var(--muted); margin-top: 8px; }
 .work-section .section-heading-row { flex-wrap: wrap; }
+.recognition-section, .volunteer-section { padding-block: clamp(48px, 7vw, 90px); border-top: 1px solid var(--line); }
+.recognition-section .section-top { align-items: center; }
+.recognition-section .section-top .text-link { margin-top: 0; }
+.recognition-section .beyond-heading p, .volunteer-heading p { font-size: 13px; line-height: 1.9; color: var(--muted); margin-top: 20px; }
+.recognition-grid, .volunteer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: start; margin-top: 36px; }
+.recognition-card { border: 1px solid var(--line); border-radius: 8px; padding: 10px; background: var(--surface); min-width: 0; }
+.recognition-card summary { border: 1px solid var(--line); text-align: center; padding: 28px clamp(16px, 3vw, 36px) 22px; }
+.recognition-card summary, .volunteer-postcard summary { cursor: pointer; list-style: none; }
+.recognition-card summary::-webkit-details-marker, .volunteer-postcard summary::-webkit-details-marker { display: none; }
+.recognition-card summary:focus-visible, .volunteer-postcard summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; border-radius: 6px; }
+.award-rosette { display: grid; place-items: center; margin: 0 auto 24px; width: 64px; height: 64px; border: 1px solid var(--lilac); border-radius: 50%; outline: 1px dashed var(--lilac); outline-offset: 5px; font-size: 40px; color: var(--lilac); }
+.recognition-card .eyebrow { display: block; line-height: 1.8; color: var(--muted); }
+.award-title { display: block; font-family: Georgia, serif; font-size: clamp(24px, 3vw, 34px); line-height: 1.3; margin-top: 18px; }
+.award-subtitle { display: block; font-size: 12px; line-height: 1.8; margin-top: 12px; color: var(--muted); }
+.card-prompt { display: flex; justify-content: center; align-items: center; gap: 12px; border-top: 1px solid var(--line); padding-top: 18px; margin-top: 26px; font-size: 10px; color: var(--lilac); }
+.card-plus { font-size: 22px; }
+.recognition-card[open] .card-plus { transform: rotate(45deg); }
+.recognition-story { padding: 24px 18px 14px; font-size: 13px; color: var(--muted); line-height: 1.9; }
+.award-events { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.award-events span { padding: 6px 12px; border: 1px solid var(--line); border-radius: 20px; font-size: 11px; color: var(--text); }
+.recognition-note { font-size: 10px; line-height: 1.8; color: var(--muted); margin-top: 18px; }
+.volunteer-heading { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.volunteer-flower { font-size: clamp(75px, 12vw, 145px); color: var(--lilac); line-height: 1; transform: rotate(-12deg); }
+.volunteer-postcard { --postcard-accent: var(--warm-ink); background: var(--surface); border: 1px solid var(--line); border-radius: 12px; min-width: 0; box-shadow: 0 7px 0 -3px var(--bg), 0 8px 0 -3px var(--line); }
+.volunteer-postcard:nth-child(2) { --postcard-accent: var(--lilac); }
+.volunteer-postcard summary { padding: clamp(20px, 3vw, 36px); }
+.postcard-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; color: var(--muted); }
+.postcard-top .eyebrow { font-size: 9px; line-height: 1.9; }
+.postcard-stamp { display: grid; place-items: center; width: 54px; height: 64px; flex-shrink: 0; border: 2px dotted var(--postcard-accent); color: var(--postcard-accent); font-size: 30px; transform: rotate(8deg); }
+.postcard-title { display: block; font-size: clamp(29px, 3.5vw, 43px); line-height: 1.2; letter-spacing: -1px; margin-top: 25px; }
+.postcard-title em { font-family: Georgia, serif; font-weight: 400; color: var(--postcard-accent); }
+.postcard-event { display: block; margin-top: 20px; font-size: 12px; line-height: 1.8; color: var(--muted); }
+.postcard-bottom { display: flex; align-items: center; gap: 14px; font-size: 11px; margin-top: 24px; }
+.heart-seal { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; color: var(--postcard-accent); border: 1px solid var(--postcard-accent); font-size: 30px; transition: transform .25s ease; }
+.volunteer-postcard summary:hover .heart-seal, .volunteer-postcard[open] .heart-seal { transform: rotate(-12deg) scale(1.08); }
+.postcard-story { border-top: 1px dashed var(--line); padding: 24px clamp(20px, 3vw, 36px) 32px; font-size: 13px; line-height: 1.9; color: var(--muted); }
+.postcard-purpose { display: flex; align-items: start; gap: 12px; padding: 16px 0; margin-top: 16px; color: var(--text); }
+.postcard-purpose > span { color: var(--postcard-accent); font-size: 20px; }
+.postcard-signoff { display: block; border-top: 1px solid var(--line); padding-top: 18px; font-family: Georgia, serif; font-style: italic; color: var(--postcard-accent); }
+.open-label, details[open] > summary .closed-label { display: none; }
+details[open] > summary .open-label { display: inline; }
+.motion-paused .heart-seal { transition: none; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .heart-seal { transition: none; }
+  .volunteer-postcard summary:hover .heart-seal, .volunteer-postcard[open] .heart-seal { transform: none; }
+}
 @media (max-width: 60rem) {
   .analytics-heading { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .analytics-heading > p { max-width: 75ch; }
@@ -440,10 +478,11 @@ dialog {
   .analytics-detail summary { font-size: 14px; }
 }
 @media (max-width: 42.5rem) {
-  .analytics-layout, .analytics-evidence { grid-template-columns: minmax(0, 1fr); }
+  .analytics-layout, .analytics-project, .recognition-grid, .volunteer-grid { grid-template-columns: minmax(0, 1fr); }
+  .analytics-project { gap: 24px; }
+  .analytics-project .project-visual { height: 300px; }
+  .volunteer-flower { display: none; }
   .analytics-capabilities { padding-top: 6px; }
-  .analytics-evidence article, .analytics-evidence article + article { border-left: 0; padding: 24px 0; }
-  .analytics-evidence article + article { border-top: 1px solid var(--line); }
   .analytics-detail summary { font-size: 16px; }
   .analytics-contact > div:first-child { flex-basis: 100%; }
   .resume-links .text-link { margin-top: 16px; }
