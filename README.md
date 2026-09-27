@@ -21,11 +21,14 @@ Open the local URL printed by Vite. Use `npm run build` to create the production
 - Illustrative traffic-signal, expense-tracker, branching-story, and responsive-design demos. These are clearly identified as portfolio concept demos, not the original project builds.
 - Complete ivory/sage/lavender light palette and original dark palette. The theme follows the OS until explicitly changed and remembers that choice in local storage.
 - A short personal story about moving from Chennai to Ireland at 17 to pursue computer science.
+- A dedicated `#analytics` section with logistics experience, expandable analytics skills, related work, and an analytics-specific contact link. Navigation, introductory copy, and metadata cover both software development and data analytics.
+- Separate software and data analytics CV downloads, preserving the original PDFs. Analytics content is based on the supplied résumé, with no invented performance metrics or employer data.
 - Live Ravaged and original website links in the work section and project explorers, email copying, Dublin local time, mobile navigation, and downloadable résumé.
 - Live project cards navigate directly to their websites; separate buttons retain the concept demos. External links, including LinkedIn, use same-tab navigation so embedded previews do not depend on popup/new-window support.
 - Keyboard navigation, focus management, reduced-motion support, and responsive layouts.
 
 Page content lives in `index.html`; project details and demos are in `src/main.js`; styling is in `src/style.css`. The original résumé is served from `public/samantha-wynne-resume.pdf`.
+The data analytics résumé is served from `public/samantha-wynne-data-analytics-cv.pdf`. The existing Expense Tracker concept demo is reused in the analytics section; it is not presented as a production analytics dashboard.
 
 The site uses Google Fonts with local fallback fonts. There are no analytics, accounts, server APIs, or form submissions. Expense demo entries stay in memory and reset when the project is reopened.
 
@@ -43,4 +46,4 @@ GitHub Pages uses **GitHub Actions** as its deployment source. `.github/workflow
 
 To update the site, change the source files, run `npm run build`, and push the changes to `main`. The public URL stays the same. Do not commit `node_modules`, `dist`, credentials, or the separately maintained Ravaged game.
 
-The downloadable résumé intentionally includes the contact details in the supplied PDF. Replace `public/samantha-wynne-resume.pdf` when you update the résumé.
+The downloadable résumés intentionally include the contact details in the supplied PDFs. Replace `public/samantha-wynne-resume.pdf` or `public/samantha-wynne-data-analytics-cv.pdf` when you update the corresponding résumé.
