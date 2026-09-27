@@ -411,9 +411,11 @@ dialog {
 .analytics-detail-body { padding: 0 0 24px 27px; }
 .analytics-detail-body p { font-size: 12px; color: var(--muted); line-height: 1.9; }
 .analytics-detail .tags span { font-size: 10px; }
-.analytics-evidence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 36px; border-block: 1px solid var(--line); }
+.analytics-evidence { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 20px; border-block: 1px solid var(--line); }
 .analytics-evidence article { padding: 28px 24px 28px 0; }
 .analytics-evidence article + article { border-left: 1px solid var(--line); padding-left: 24px; }
+.analytics-evidence article:nth-child(odd) { border-left: 0; padding-left: 0; }
+.analytics-evidence article:nth-child(n+3) { border-top: 1px solid var(--line); }
 .analytics-evidence .eyebrow { color: var(--lilac); font-size: 8px; letter-spacing: 1.2px; }
 .analytics-evidence h3 { font-size: 17px; font-weight: 500; line-height: 1.5; margin: 14px 0 10px; }
 .analytics-evidence p { font-size: 12px; line-height: 1.8; color: var(--muted); }
@@ -425,6 +427,12 @@ dialog {
 .analytics-actions .button { gap: 20px; line-height: 1.7; }
 .analytics-actions .text-link { margin-top: 6px; }
 .resume-links { display: flex; gap: 10px 26px; flex-wrap: wrap; }
+.career-section-intro { max-width: 75ch; font-size: 13px; line-height: 1.9; color: var(--muted); margin: -16px 0 32px; }
+.career-section-intro a { color: var(--lilac); text-decoration: underline; text-underline-offset: 4px; }
+.analytics-projects-heading { margin-top: 36px; }
+.analytics-projects-heading h3 { font-size: 21px; font-weight: 500; line-height: 1.5; }
+.analytics-projects-heading p { font-size: 12px; line-height: 1.8; color: var(--muted); margin-top: 8px; }
+.work-section .section-heading-row { flex-wrap: wrap; }
 @media (max-width: 60rem) {
   .analytics-heading { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .analytics-heading > p { max-width: 75ch; }
