@@ -22,6 +22,7 @@ Open the local URL printed by Vite. Use `npm run build` to create the production
 - Illustrative traffic-signal, expense-tracker, branching-story, and responsive-design demos. These are clearly identified as portfolio concept demos, not the original project builds.
 - Complete ivory/sage/lavender light palette and original dark palette. The theme follows the OS until explicitly changed and remembers that choice in local storage.
 - A short personal story about moving from Chennai to Ireland at 17 to pursue computer science.
+- A compact 3D-printing hobby section below the personal story introduces Little Layer Studio and links to `/little-layer-studio/`. It shares the portfolio's light/dark palette and responsive layout without changing the software project filters.
 - A dedicated `#analytics` section with logistics experience, expandable analytics skills, related work, and an analytics-specific contact link. Navigation, introductory copy, and metadata cover both software development and data analytics.
 - Separate software and data analytics CV downloads, preserving the original PDFs. Analytics content is based on the supplied résumé, with no invented performance metrics or employer data.
 - Both PDFs are current, role-specific CVs. Software Development contains the traffic-light system, Ravaged, and web project with the software CV. Expense Tracker appears only in Data Analytics, alongside the analytics CV; software filters do not affect it.
