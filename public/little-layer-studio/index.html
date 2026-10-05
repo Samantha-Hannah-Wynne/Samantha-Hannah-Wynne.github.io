@@ -6,15 +6,17 @@
   <meta name="description" content="Real 3D prints and colourful ideas by Samantha Wynne, a computer science student in Dublin. Explore Little Layer Studio's photo gallery and ask about a custom print.">
   <meta name="theme-color" content="#fbf7ef">
   <title>Little Layer Studio | Little prints. Big personality.</title>
+  <script src="theme.js"></script>
   <link rel="icon" href="assets/logo.png">
   <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="theme.css">
   <script src="site.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="wordmark" href="index.html" aria-label="Little Layer Studio home"><img src="assets/logo.png" width="48" height="48" alt=""><span>little layer<span class="wordmark-bottom">studio.</span></span></a>
-    <nav aria-label="Main navigation"><a href="#printed">Real prints</a><a href="#collections">Collections</a><a href="#about">Meet Samantha</a><a class="nav-contact" href="contact.html">Say hello <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="Main navigation"><a href="#printed">Real prints</a><a href="#collections">Collections</a><a href="#about">Meet Samantha</a><a class="nav-contact" href="contact.html">Say hello <span aria-hidden="true">↗</span></a><button type="button" class="theme-toggle" data-theme-toggle hidden>☾ Dark</button></nav>
   </header>
   <main id="main">
     <section class="hero section-width">
@@ -108,6 +110,7 @@
       <div class="section-width">
         <div class="section-heading"><div><p class="eyebrow">On the idea shelf</p><h2>A little look around.</h2></div><a class="text-link" href="contact.html">Ask me about a design <span aria-hidden="true">↗</span></a></div>
         <p class="concept-notice"><strong>A peek, not a promise:</strong> these are original digital mockups, not photos of finished prints. Prices are indicative, not confirmed quotes. I’ll review each request and confirm the design, dimensions, availability and applicable product-safety requirements before accepting an order.</p>
+        <a class="calculator-invite" href="#estimate" id="estimate-shortcut" hidden><span class="calculator-icon" aria-hidden="true">+ =</span><span><strong>Build your little bundle</strong><span>Tap to add your favourites, mix collections and see an estimated total.</span></span><span aria-hidden="true">↘</span></a>
         <div class="filters" aria-label="Filter designs by collection">
           <button type="button" class="filter active" data-filter="all" aria-pressed="true">Everything</button>
           <button type="button" class="filter" data-filter="personalised" aria-pressed="false">Personalised</button>
@@ -117,7 +120,27 @@
         </div>
         <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
         <div class="product-grid" id="product-grid"></div>
-        <noscript><p>Enable JavaScript to filter the gallery and enlarge pictures. You can still browse the four PDF brochures below or <a href="contact.html">contact Samantha directly</a>.</p></noscript>
+        <noscript><p>Enable JavaScript to filter the design gallery and use the estimate calculator. You can still browse the four PDF brochures below or <a href="contact.html">contact Samantha directly</a>.</p></noscript>
+        <section class="estimate-panel" id="estimate" aria-labelledby="estimate-heading" hidden>
+          <div class="estimate-heading"><div><p class="eyebrow">A little pick &amp; mix</p><h2 id="estimate-heading" tabindex="-1">Your little bundle.</h2><p>Pick your favourites. Play with quantities. Let’s see what adds up.</p></div><span class="estimate-sticker" aria-hidden="true">little picks.<br>lovely possibilities.</span></div>
+          <div class="estimate-layout">
+            <div class="estimate-selection">
+              <div class="estimate-list-heading"><h3>Your picks <span id="estimate-count">(0)</span></h3><button type="button" class="clear-estimate" id="clear-estimate" disabled>Clear all</button></div>
+              <div class="estimate-empty" id="estimate-empty"><span aria-hidden="true">✦</span><h3>A little empty, for now.</h3><p>Use “Add to my bundle” on any of the 24 priced design ideas above. Your real-print gallery stays separate.</p><a class="text-link" href="#work">Find your first favourite ↑</a></div>
+              <ul class="estimate-items" id="estimate-items" aria-label="Selected design ideas"></ul>
+              <p class="estimate-status" id="estimate-status" role="status" aria-live="polite" aria-atomic="true"></p>
+            </div>
+            <form class="estimate-receipt" id="estimate-form">
+              <p class="eyebrow">The little total</p><p class="total-label">Estimated item total</p><p class="estimate-total" id="estimate-total">€0.00</p>
+              <p class="estimate-disclaimer" id="estimate-disclaimer">An estimate, not a quote or order. Uses the listed indicative prices, with no bundle discounts applied. Delivery and custom changes are quoted separately. Final designs, availability and product-safety requirements need confirming.</p>
+              <label for="estimate-fulfilment">Getting your prints</label><select id="estimate-fulfilment" name="fulfilment"><option value="Not sure yet">Not sure yet</option><option value="Collection by arrangement">Collection by arrangement</option><option value="Dublin delivery (charge to confirm)">Dublin delivery (charge to confirm)</option></select>
+              <label for="estimate-note">Names, colours or a little note <span>(optional)</span></label><textarea id="estimate-note" name="note" rows="3" maxlength="600" placeholder="For example: Aoife in purple, and Rory in blue."></textarea>
+              <button class="button whatsapp" id="estimate-enquire" type="submit" disabled aria-describedby="estimate-disclaimer estimate-help">Enquire about my bundle ↗</button>
+              <p class="small-note" id="estimate-help">Opens a WhatsApp draft with your picks and estimate. Review it before pressing Send in WhatsApp. Please don’t include sensitive details.</p>
+              <p class="small-note">Your picks aren’t saved. Refreshing this page starts a new bundle.</p>
+            </form>
+          </div>
+        </section>
         <div class="brochure-strip"><div><h3>Prefer a little brochure?</h3><p>Download the collection previews as PDFs.</p></div><div class="brochure-links"><a href="assets/personalised.pdf" download>Personalised ↓</a><a href="assets/halloween.pdf" download>Halloween ↓</a><a href="assets/diwali.pdf" download>Diwali ↓</a><a href="assets/toys.pdf" download>Playful ideas ↓</a></div></div>
       </div>
     </section>
@@ -128,6 +151,7 @@
     <section class="section-width enquiry-banner"><div><p class="eyebrow">Your idea could be the next little thing</p><h2>Let’s talk colour,<br>names &amp; possibilities.</h2><p>No checkout, no pressure. Just a conversation.</p></div><a class="button dark" href="contact.html">Let’s chat <span aria-hidden="true">↗</span></a></section>
     <section class="section-width faq-section"><p class="eyebrow">A few little answers</p><h2>Before you say hello.</h2>
       <details><summary>Can I order something new?</summary><p>It could be possible! Send me your idea and I’ll look into it first to see whether it’s something I can print. If it’s a good fit, we can chat about the design, price and timing before confirming an order. An enquiry isn’t a commitment to buy.</p></details>
+      <details><summary>How does the bundle calculator work?</summary><p>Add any of the 24 priced design concepts to your bundle, then adjust quantities to see an estimated item total. A quantity of one means the unit shown on the card, such as one pair or one set of four, not one piece from that set. The calculator adds the listed indicative prices without applying bundle discounts. Delivery, custom changes, final pricing and availability need confirming with me. You can send your selections as a WhatsApp enquiry; nothing is ordered or paid for on this site.</p></details>
       <details><summary>Are these photos of your prints?</summary><p>The <a href="#printed">Already printed gallery</a> contains my own photos of finished prints. The hero pictures and design collections are separately labelled digital mockups, not finished-print photos. Those concepts show an idea’s style rather than an exact printed product. Photos of past projects don’t imply that a design is available to order.</p></details>
       <details><summary>Can I choose names and colours?</summary><p>That’s the plan for the personalised collection. Tell me your preferred name and colour combination, and I’ll check what’s possible. Font support, size and final options need confirming.</p></details>
       <details><summary>Are the playful designs ready for children?</summary><p>They are concept previews only. Any toy offered for sale will need the applicable Irish/EU toy-safety work, documentation and marking completed first. An age warning alone is not a substitute for that work.</p></details>
@@ -135,6 +159,7 @@
     </section>
   </main>
   <footer class="site-footer section-width"><a class="wordmark" href="index.html"><img src="assets/logo.png" width="42" height="42" alt=""><span>little layer<span class="wordmark-bottom">studio.</span></span></a><p>A little side project by Samantha Wynne.<br>Dublin, Ireland · Little gifts. Lovely layers.</p><div><a href="contact.html">Contact &amp; privacy</a><a href="references.html">Halloween model references</a></div></footer>
+  <a class="estimate-dock" id="estimate-dock" href="#estimate" hidden><span><strong>Your little bundle</strong><span id="estimate-dock-count"></span></span><strong id="estimate-dock-total"></strong><span class="dock-view">View estimate ↑</span></a>
   <dialog id="image-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description"><button type="button" class="dialog-close" aria-label="Close image preview">Close ×</button><img id="dialog-image" alt="" width="1200" height="560"><h2 id="dialog-title"></h2><p id="dialog-description">Original digital mockup, not a photo of a finished print.</p></dialog>
 </body>
 </html>

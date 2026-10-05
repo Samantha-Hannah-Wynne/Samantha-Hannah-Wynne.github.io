@@ -28,6 +28,27 @@ const categories = { personalised: "Personalised", halloween: "Halloween", diwal
 const whatsappNumber = "919840684483";
 const grid = document.querySelector("#product-grid");
 const dialog = document.querySelector("#image-dialog");
+const bundle = new Map();
+const euro = new Intl.NumberFormat("en-IE", { style: "currency", currency: "EUR" });
+let estimateInView = false;
+
+function syncEstimateDock() {
+  document.querySelector("#estimate-dock").hidden = bundle.size === 0 || estimateInView;
+}
+
+function whatsappUrl(message) {
+  const url = new URL(`https://wa.me/${whatsappNumber}`);
+  url.searchParams.set("text", message);
+  return url.href;
+}
+
+function bundleTotal() {
+  return products.reduce((total, product) => total + product.price * 100 * (bundle.get(product.id) || 0), 0);
+}
+
+function unitPrice(product) {
+  return `${euro.format(product.price)} ${product.unit === "each" ? "each" : `per ${product.unit}`}`;
+}
 
 function element(tag, className, content) {
   const node = document.createElement(tag);
@@ -76,8 +97,91 @@ function createCard(product) {
   enquire.href = `contact.html?item=${encodeURIComponent(product.id)}`;
   footer.append(price, enquire);
   body.append(footer);
+  const add = element("button", "add-to-bundle", "+ Add to my bundle");
+  add.type = "button";
+  add.dataset.addProduct = product.id;
+  add.setAttribute("aria-label", `Add ${product.name} to my bundle`);
+  add.addEventListener("click", () => updateQuantity(product, (bundle.get(product.id) || 0) + 1));
+  body.append(add);
   card.append(picture, body);
   return card;
+}
+
+function updateQuantity(product, quantity, action) {
+  const total = bundleTotal() + (quantity - (bundle.get(product.id) || 0)) * product.price * 100;
+  if (!Number.isSafeInteger(quantity) || quantity < 0 || !Number.isSafeInteger(total)) {
+    document.querySelector("#estimate-status").textContent = "That quantity is too large to calculate reliably. Please contact Samantha about a larger request.";
+    return;
+  }
+  if (quantity === 0) bundle.delete(product.id);
+  else bundle.set(product.id, quantity);
+  renderEstimate();
+  document.querySelector("#estimate-status").textContent = `${product.name}: ${quantity === 0 ? "removed" : `quantity ${quantity}`}. Estimated item total ${euro.format(bundleTotal() / 100)}.`;
+  if (action) {
+    const target = document.querySelector(`[data-bundle-product="${product.id}"] [data-action="${action}"]`)
+      || document.querySelector("#estimate-items button")
+      || document.querySelector("#estimate-heading");
+    target.focus({ preventScroll: true });
+  }
+}
+
+function renderEstimate() {
+  const list = document.querySelector("#estimate-items");
+  list.replaceChildren();
+  let picks = 0;
+  for (const product of products) {
+    const quantity = bundle.get(product.id);
+    if (!quantity) continue;
+    picks += quantity;
+    const row = element("li", "estimate-item");
+    row.dataset.bundleProduct = product.id;
+    const image = element("img");
+    image.src = `assets/${product.id}.png`;
+    image.alt = "";
+    image.width = 80;
+    image.height = 48;
+    const description = element("div", "estimate-item-description");
+    description.append(element("h4", "", product.name), element("p", "", unitPrice(product)));
+    const controls = element("div", "quantity-controls");
+    controls.setAttribute("role", "group");
+    controls.setAttribute("aria-label", `${product.name} quantity`);
+    for (const [action, symbol, label, next] of [
+      ["decrease", "−", "Decrease", quantity - 1],
+      ["increase", "+", "Increase", quantity + 1]
+    ]) {
+      const button = element("button", "", symbol);
+      button.type = "button";
+      button.dataset.action = action;
+      button.setAttribute("aria-label", `${label} ${product.name} quantity`);
+      button.addEventListener("click", () => updateQuantity(product, next, action));
+      controls.append(button);
+      if (action === "decrease") controls.append(element("span", "quantity-value", String(quantity)));
+    }
+    const remove = element("button", "remove-estimate-item", "Remove");
+    remove.type = "button";
+    remove.dataset.action = "remove";
+    remove.setAttribute("aria-label", `Remove ${product.name} from my bundle`);
+    remove.addEventListener("click", () => updateQuantity(product, 0, "remove"));
+    const lineTotal = element("strong", "estimate-line-total", euro.format(product.price * quantity));
+    row.append(image, description, controls, lineTotal, remove);
+    list.append(row);
+  }
+  const total = euro.format(bundleTotal() / 100);
+  const count = `${picks} ${picks === 1 ? "pick" : "picks"} · ${bundle.size} ${bundle.size === 1 ? "design" : "designs"}`;
+  document.querySelector("#estimate-count").textContent = `(${picks})`;
+  document.querySelector("#estimate-total").textContent = total;
+  document.querySelector("#estimate-empty").hidden = bundle.size > 0;
+  document.querySelector("#clear-estimate").disabled = bundle.size === 0;
+  document.querySelector("#estimate-enquire").disabled = bundle.size === 0;
+  syncEstimateDock();
+  document.querySelector("#estimate-dock-count").textContent = `${count} · estimate only`;
+  document.querySelector("#estimate-dock-total").textContent = total;
+  document.body.classList.toggle("has-bundle", bundle.size > 0);
+  document.querySelectorAll("[data-add-product]").forEach(button => {
+    const quantity = bundle.get(button.dataset.addProduct) || 0;
+    button.textContent = quantity ? `+ Add another (${quantity} picked)` : "+ Add to my bundle";
+    button.classList.toggle("has-picks", quantity > 0);
+  });
 }
 
 function filterProducts(category) {
@@ -100,6 +204,40 @@ if (grid) {
   filterProducts("all");
   document.querySelectorAll("[data-filter]").forEach(button => button.addEventListener("click", () => filterProducts(button.dataset.filter)));
   document.querySelectorAll("[data-collection]").forEach(link => link.addEventListener("click", () => filterProducts(link.dataset.collection)));
+  document.querySelector("#estimate").hidden = false;
+  document.querySelector("#estimate-shortcut").hidden = false;
+  renderEstimate();
+  new IntersectionObserver(([entry]) => {
+    estimateInView = entry.isIntersecting;
+    syncEstimateDock();
+  }).observe(document.querySelector("#estimate"));
+  document.querySelector("#clear-estimate").addEventListener("click", () => {
+    bundle.clear();
+    document.querySelector("#estimate-form").reset();
+    renderEstimate();
+    document.querySelector("#estimate-status").textContent = "Your bundle is cleared. Choose a new favourite to start again.";
+    document.querySelector("#estimate-heading").focus({ preventScroll: true });
+  });
+  document.querySelector("#estimate-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (bundle.size === 0) {
+      document.querySelector("#estimate-status").textContent = "Add a design to your bundle before making an enquiry.";
+      return;
+    }
+    const lines = [
+      "Hi Samantha! I've put together a little bundle on Little Layer Studio.",
+      "",
+      ...products.filter(product => bundle.has(product.id)).map(product => `${bundle.get(product.id)} x ${product.name} (${unitPrice(product)}): ${euro.format(product.price * bundle.get(product.id))}`),
+      "",
+      `Estimated item total: ${euro.format(bundleTotal() / 100)}`,
+      "Indicative prices only. No bundle discounts applied. Delivery and custom changes are not included.",
+      `Collection/delivery preference: ${document.querySelector("#estimate-fulfilment").value}`
+    ];
+    const note = document.querySelector("#estimate-note").value.trim();
+    if (note) lines.push("", `Names, colours or notes: ${note}`);
+    lines.push("", "Could you confirm what is possible, the final price and timing? I understand this is an enquiry, not an order, and designs, availability and applicable product-safety requirements need confirming.");
+    window.location.assign(whatsappUrl(lines.join("\n")));
+  });
 }
 
 if (dialog) {
@@ -145,8 +283,6 @@ if (enquiryForm) {
     const name = document.querySelector("#your-name").value.trim();
     const product = products.find(item => item.id === interest.value);
     const lines = ["Hi Samantha! I found Little Layer Studio.", name ? `My name is ${name}.` : "", product ? `I'm interested in ${product.name}.` : "I'd like to ask about a custom idea.", "", question, "", "I understand this is an enquiry, not a confirmed order."].filter((line, index, all) => line || all[index - 1]);
-    const url = new URL(`https://wa.me/${whatsappNumber}`);
-    url.searchParams.set("text", lines.join("\n"));
-    window.location.assign(url.href);
+    window.location.assign(whatsappUrl(lines.join("\n")));
   });
 }
