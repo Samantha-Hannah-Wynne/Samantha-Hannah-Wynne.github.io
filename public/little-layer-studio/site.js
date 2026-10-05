@@ -36,6 +36,21 @@ function element(tag, className, content) {
   return node;
 }
 
+function openPreview(trigger, image, title, isPhoto = false) {
+  const dialogImage = document.querySelector("#dialog-image");
+  dialogImage.src = isPhoto ? trigger.href : image.src;
+  dialogImage.alt = image.alt;
+  dialogImage.width = image.width;
+  dialogImage.height = image.height;
+  dialog.classList.toggle("photo-preview", isPhoto);
+  document.querySelector("#dialog-title").textContent = title;
+  document.querySelector("#dialog-description").textContent = isPhoto
+    ? "My own photo of a finished print. Past project shown for inspiration, not a sale listing."
+    : "Original digital mockup, not a photo of a finished print.";
+  trigger.focus({ preventScroll: true });
+  dialog.showModal();
+}
+
 function createCard(product) {
   const card = element("article", "product-card");
   card.dataset.category = product.category;
@@ -51,14 +66,7 @@ function createCard(product) {
   const enlarge = element("span", "enlarge", "＋");
   enlarge.setAttribute("aria-hidden", "true");
   picture.append(image, enlarge);
-  picture.addEventListener("click", () => {
-    const dialogImage = document.querySelector("#dialog-image");
-    dialogImage.src = image.src;
-    dialogImage.alt = image.alt;
-    document.querySelector("#dialog-title").textContent = product.name;
-    picture.focus({ preventScroll: true });
-    dialog.showModal();
-  });
+  picture.addEventListener("click", () => openPreview(picture, image, product.name));
   const body = element("div", "product-body");
   body.append(element("p", "product-category", `${categories[product.category]} / concept`), element("h3", "", product.name), element("p", "product-description", product.description));
   const footer = element("div", "product-footer");
@@ -92,6 +100,14 @@ if (grid) {
   filterProducts("all");
   document.querySelectorAll("[data-filter]").forEach(button => button.addEventListener("click", () => filterProducts(button.dataset.filter)));
   document.querySelectorAll("[data-collection]").forEach(link => link.addEventListener("click", () => filterProducts(link.dataset.collection)));
+}
+
+if (dialog) {
+  document.querySelectorAll(".print-photo").forEach(link => link.addEventListener("click", event => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    openPreview(link, link.querySelector("img"), link.dataset.photoTitle, true);
+  }));
   document.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
   dialog.addEventListener("click", event => {
     if (event.target !== dialog) return;
@@ -128,7 +144,7 @@ if (enquiryForm) {
     }
     const name = document.querySelector("#your-name").value.trim();
     const product = products.find(item => item.id === interest.value);
-    const lines = ["Hi Samantha! I found Little Layer Studio.", name ? `My name is ${name}.` : "", product ? `I'm interested in ${product.name}.` : "I'd like to ask about a custom idea.", "", question, "", "I understand the website shows design concepts and this is an enquiry, not an order."].filter((line, index, all) => line || all[index - 1]);
+    const lines = ["Hi Samantha! I found Little Layer Studio.", name ? `My name is ${name}.` : "", product ? `I'm interested in ${product.name}.` : "I'd like to ask about a custom idea.", "", question, "", "I understand this is an enquiry, not a confirmed order."].filter((line, index, all) => line || all[index - 1]);
     const url = new URL(`https://wa.me/${whatsappNumber}`);
     url.searchParams.set("text", lines.join("\n"));
     window.location.assign(url.href);
