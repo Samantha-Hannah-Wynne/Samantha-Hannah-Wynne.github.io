@@ -44,7 +44,7 @@ function createCard(product) {
   picture.setAttribute("aria-label", `Enlarge ${product.name} digital mockup`);
   const image = element("img");
   image.src = `assets/${product.id}.png`;
-  image.alt = `${product.name} — original digital mockup, not a finished-print photograph`;
+  image.alt = `${product.name}: original digital mockup, not a finished-print photograph`;
   image.width = 1200;
   image.height = 560;
   image.loading = "lazy";
@@ -56,6 +56,7 @@ function createCard(product) {
     dialogImage.src = image.src;
     dialogImage.alt = image.alt;
     document.querySelector("#dialog-title").textContent = product.name;
+    picture.focus({ preventScroll: true });
     dialog.showModal();
   });
   const body = element("div", "product-body");
