@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Little Layer Studio by Samantha Wynne. A Dublin computer science student's 3D-printing hobby: personalised gifts, colourful concepts and seasonal decorations.">
+  <meta name="theme-color" content="#fbf7ef">
+  <title>Little Layer Studio | Little prints. Big personality.</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="Little Layer Studio home"><img src="assets/logo.png" width="48" height="48" alt=""><span>little layer<span class="wordmark-bottom">studio.</span></span></a>
+    <nav aria-label="Main navigation"><a href="#collections">Collections</a><a href="#about">Meet Samantha</a><a class="nav-contact" href="contact.html">Say hello <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main">
+    <section class="hero section-width">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> A little side project, here in Dublin</p>
+        <h1>Little prints.<br>Big <span class="hand-highlight">personality.</span></h1>
+        <p class="intro">Hi, I’m <strong>Samantha Wynne</strong> — a computer science student exploring 3D printing as a side hobby. Welcome to my little corner of colourful ideas, personalised gifts and seasonal fun.</p>
+        <div class="button-row"><a class="button primary" href="#work">Explore the designs <span aria-hidden="true">↓</span></a><a class="text-link" href="contact.html">Have something in mind? <span aria-hidden="true">↗</span></a></div>
+        <p class="small-note">A collection in the making. Enquiries welcome; orders aren’t open yet.</p>
+      </div>
+      <div class="hero-display" aria-label="Preview of original Little Layer Studio design mockups">
+        <span class="hero-star" aria-hidden="true">✦</span>
+        <figure class="hero-card hero-animals"><span class="mini-label">A tiny wild bunch</span><img src="assets/safari.png" width="1200" height="560" alt="Original digital mockup of four colourful safari animals"><figcaption>Small characters. Big smiles.</figcaption></figure>
+        <figure class="hero-card hero-name"><img src="assets/keyring.png" width="1200" height="560" alt="Original digital mockups of purple and orange personalised name keyrings"><figcaption>A little more you.</figcaption></figure>
+        <div class="round-sticker">ideas,<br>layer by<br><strong>layer.</strong></div>
+        <span class="mockup-caption">Original digital mockups · not finished-print photos</span>
+      </div>
+    </section>
+    <div class="ribbon" aria-label="Studio interests"><span>Personal little details</span><span aria-hidden="true">✦</span><span>Colourful ideas</span><span aria-hidden="true">✦</span><span>Seasonal smiles</span><span aria-hidden="true">✦</span><span>Made personal, not ordinary</span></div>
+    <section class="section-width section-space" id="collections">
+      <div class="section-heading"><div><p class="eyebrow">Pick your kind of happy</p><h2>Four little collections.</h2></div><p>From a name on a keyring to a happy little haunt. Find the idea that feels like you.</p></div>
+      <div class="collection-grid">
+        <a class="collection-tile tile-personal" href="#work" data-collection="personalised"><span class="collection-number">01 / Made personal</span><img src="assets/keyring.png" width="1200" height="560" loading="lazy" alt="Name keyring mockups"><h3>Yours, truly. <span aria-hidden="true">↗</span></h3><p>Names, gifts &amp; thoughtful little details</p></a>
+        <a class="collection-tile tile-halloween" href="#work" data-collection="halloween"><span class="collection-number">02 / Halloween</span><img src="assets/pumpkins.png" width="1200" height="560" loading="lazy" alt="Three colourful pumpkin mockups"><h3>Little boos. <span aria-hidden="true">↗</span></h3><p>All cute. No creepy.</p></a>
+        <a class="collection-tile tile-diwali" href="#work" data-collection="diwali"><span class="collection-number">03 / Diwali</span><img src="assets/lotus.png" width="1200" height="560" loading="lazy" alt="Pink and orange lotus decoration mockups"><h3>A lot of joy. <span aria-hidden="true">↗</span></h3><p>Colour &amp; celebration for your home</p></a>
+        <a class="collection-tile tile-toys" href="#work" data-collection="toys"><span class="collection-number">04 / Playful ideas</span><img src="assets/ocean.png" width="1200" height="560" loading="lazy" alt="Four colourful sea-creature mockups"><h3>Tiny worlds. <span aria-hidden="true">↗</span></h3><p>Animal crews &amp; creative concepts</p></a>
+      </div>
+    </section>
+    <section class="work-section" id="work">
+      <div class="section-width">
+        <div class="section-heading"><div><p class="eyebrow">On the idea shelf</p><h2>A little look around.</h2></div><a class="text-link" href="contact.html">Ask me about a design <span aria-hidden="true">↗</span></a></div>
+        <p class="concept-notice"><strong>A peek, not a promise:</strong> these are original digital mockups, not photos of finished prints. Prices are indicative, not confirmed quotes. Designs, dimensions, availability and product-safety requirements still need confirming before orders open.</p>
+        <div class="filters" aria-label="Filter designs by collection">
+          <button type="button" class="filter active" data-filter="all" aria-pressed="true">Everything</button>
+          <button type="button" class="filter" data-filter="personalised" aria-pressed="false">Personalised</button>
+          <button type="button" class="filter" data-filter="halloween" aria-pressed="false">Halloween</button>
+          <button type="button" class="filter" data-filter="diwali" aria-pressed="false">Diwali</button>
+          <button type="button" class="filter" data-filter="toys" aria-pressed="false">Playful ideas</button>
+        </div>
+        <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+        <div class="product-grid" id="product-grid"></div>
+        <noscript><p>Enable JavaScript to filter the gallery and enlarge pictures. You can still browse the four PDF brochures below or <a href="contact.html">contact Samantha directly</a>.</p></noscript>
+        <div class="brochure-strip"><div><h3>Prefer a little brochure?</h3><p>Download the collection previews as PDFs.</p></div><div class="brochure-links"><a href="assets/personalised.pdf" download>Personalised ↓</a><a href="assets/halloween.pdf" download>Halloween ↓</a><a href="assets/diwali.pdf" download>Diwali ↓</a><a href="assets/toys.pdf" download>Playful ideas ↓</a></div></div>
+      </div>
+    </section>
+    <section class="section-width section-space about-section" id="about">
+      <div class="about-art" aria-hidden="true"><img src="assets/logo.png" width="1080" height="1080" loading="lazy" alt=""><span class="about-note">a little code.<br>a little creativity.</span></div>
+      <div class="about-copy"><p class="eyebrow">The person behind the layers</p><h2>Hi, I’m Samantha.<br>Student. Maker.<br><span class="soft-purple">Curious by default.</span></h2><p>I’m a computer science student, and Little Layer Studio is my 3D-printing side hobby here in Dublin. It’s a place to explore what happens when a little technical curiosity meets a lot of colour.</p><p>I’m developing the first collection, from personalised name pieces to cheerful seasonal decorations. This site is a look at those ideas as they take shape — not a finished-product shop just yet.</p><p>Got a colour combination, a name or a little gift idea in mind? I’d love to hear it.</p><a class="button primary" href="contact.html">Say hello to Samantha <span aria-hidden="true">↗</span></a></div>
+    </section>
+    <section class="section-width enquiry-banner"><div><p class="eyebrow">Your idea could be the next little thing</p><h2>Let’s talk colour,<br>names &amp; possibilities.</h2><p>No checkout, no pressure. Just a conversation.</p></div><a class="button dark" href="contact.html">Let’s chat <span aria-hidden="true">↗</span></a></section>
+    <section class="section-width faq-section"><p class="eyebrow">A few little answers</p><h2>Before you say hello.</h2>
+      <details><summary>Can I order something now?</summary><p>Not yet. I’m collecting interest and developing the designs. You can ask about a concept, but sending an enquiry does not place an order or reserve a price. I’ll confirm the final product, price and timing before any future order.</p></details>
+      <details><summary>Are these photos of your prints?</summary><p>No. All product pictures on this site are original digital mockups. They show an idea’s style, not the exact finish, dimensions or geometry of a printed item. Finished-print photos will replace them as the range develops.</p></details>
+      <details><summary>Can I choose names and colours?</summary><p>That’s the plan for the personalised collection. Tell me your preferred name and colour combination, and I’ll check what’s possible. Font support, size and final options need confirming.</p></details>
+      <details><summary>Are the playful designs ready for children?</summary><p>They are concept previews only. Any toy offered for sale will need the applicable Irish/EU toy-safety work, documentation and marking completed first. An age warning alone is not a substitute for that work.</p></details>
+      <details><summary>Do you offer collection or delivery?</summary><p>I’m based in Dublin. Collection, delivery areas, charges and timing are not set yet; they’ll be discussed and confirmed before any future order. There is no advertised walk-in shop.</p></details>
+    </section>
+  </main>
+  <footer class="site-footer section-width"><a class="wordmark" href="index.html"><img src="assets/logo.png" width="42" height="42" alt=""><span>little layer<span class="wordmark-bottom">studio.</span></span></a><p>A little side project by Samantha Wynne.<br>Dublin, Ireland · Little gifts. Lovely layers.</p><div><a href="contact.html">Contact &amp; privacy</a><a href="references.html">Halloween model references</a></div></footer>
+  <dialog id="image-dialog" aria-labelledby="dialog-title"><button type="button" class="dialog-close" aria-label="Close image preview">Close ×</button><img id="dialog-image" alt="" width="1200" height="560"><h2 id="dialog-title"></h2><p>Original digital mockup — not a photo of a finished print.</p></dialog>
+</body>
+</html>

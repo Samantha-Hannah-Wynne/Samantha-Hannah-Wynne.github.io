@@ -45,6 +45,16 @@ The Python game and browser edition are maintained separately at <https://github
 
 ## Deployment
 
+### Little Layer Studio
+
+The separate 3D-printing hobby website lives in `public/little-layer-studio/` and is published at <https://samantha-hannah-wynne.github.io/little-layer-studio/>. Vite copies this self-contained static site into `dist/little-layer-studio/`; the personal portfolio at the root is unchanged.
+
+Edit the studio's `index.html`, `contact.html`, `references.html`, `site.css`, and `site.js` within that folder. Its assets include original digital product mockups and four downloadable preview brochures. Images are not finished-print photos, prices are indicative, and orders are not open. The approved public WhatsApp contact is configured in `contact.html` and `site.js`. The optional message builder opens a WhatsApp draft; it does not submit a website form or send a message automatically.
+
+Only the customer-facing studio site is included. Owner pricing notes, planning guides, development tooling and authentication files must not be added to this repository.
+
+### Publishing both sites
+
 The source repository is <https://github.com/Samantha-Hannah-Wynne/Samantha-Hannah-Wynne.github.io>.
 
 GitHub Pages uses **GitHub Actions** as its deployment source. `.github/workflows/deploy.yml` installs locked dependencies with Node.js 22, builds the site, and publishes only `dist`. Every push to `main` deploys the latest version; the workflow can also be run manually from the Actions tab.
