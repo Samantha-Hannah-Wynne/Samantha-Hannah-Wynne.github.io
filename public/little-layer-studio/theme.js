@@ -1,6 +1,5 @@
 (() => {
   const key = "little-layer-studio-theme";
-  const system = window.matchMedia("(prefers-color-scheme: dark)");
   let preference;
   try {
     const saved = localStorage.getItem(key);
@@ -10,7 +9,7 @@
   }
 
   function applyTheme() {
-    const theme = preference || (system.matches ? "dark" : "light");
+    const theme = preference || "dark";
     document.documentElement.dataset.theme = theme;
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.content = theme === "dark" ? "#171321" : "#fbf7ef";
@@ -20,9 +19,8 @@
       button.hidden = false;
     });
   }
-
   applyTheme();
-  system.addEventListener("change", applyTheme);
+  applyTheme();
   document.addEventListener("DOMContentLoaded", () => {
     applyTheme();
     document.querySelectorAll("[data-theme-toggle]").forEach(button => button.addEventListener("click", () => {
