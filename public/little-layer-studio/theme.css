@@ -23,12 +23,18 @@
 [data-theme="dark"] .tile-halloween{background:#4c3025}
 [data-theme="dark"] .tile-diwali{background:#443b20}
 [data-theme="dark"] .tile-toys{background:#2c402c}
+[data-theme="dark"] .tile-plants{background:#254236}
+[data-theme="dark"] .tile-christmas{background:#4a2935}
+[data-theme="dark"] .plant-spotlight{background:#13271f}
+[data-theme="dark"] .plant-prices a{border-color:#ffffff38;background:#ffffff10}
+[data-theme="dark"] .plant-button{background:#d9ef8f;color:#20392e}
 [data-theme="dark"] .work-section{background:#1e1828}
 [data-theme="dark"] .concept-notice{background:#30243d;border-color:#ba93df;color:#dfd0ed}
 [data-theme="dark"] .filter{border-color:#705985}
 [data-theme="dark"] .filter.active{background:#d4b4f2;border-color:#d4b4f2;color:#25172e}
 [data-theme="dark"] .filter:hover:not(.active){background:#382946}
 [data-theme="dark"] .product-card{background:#292033;border-color:#4d3a5c}
+[data-theme="dark"] .product-image-button.real-product-image{background:#1d1922}
 [data-theme="dark"] .enlarge{background:#e8d8f5;color:#382347}
 [data-theme="dark"] .product-footer{border-color:#4d3a5c}
 [data-theme="dark"] .brochure-strip{border-color:#806498}
@@ -44,6 +50,9 @@
 [data-theme="dark"] .chat-icon{background:#435b40;color:#ebf6e3}
 [data-theme="dark"] .contact-divider{background:#607159}
 [data-theme="dark"] .message-card,[data-theme="dark"] .reference-card{background:#261e31;border-color:#4d3a5c}
+[data-theme="dark"] .owner-card{background:#261e31;border-color:#4d3a5c}
+[data-theme="dark"] .owner-preview{background:#18131f}
+[data-theme="dark"] .owner-steps code{background:#392b46}
 [data-theme="dark"] input,[data-theme="dark"] select,[data-theme="dark"] textarea{background:#1b1524;border-color:#78618b;color:#f3edf9}
 [data-theme="dark"] ::placeholder{color:#b7a8c4}
 [data-theme="dark"] .photo-badge{background:#30402c;color:#e1efd6;border-color:#607952}

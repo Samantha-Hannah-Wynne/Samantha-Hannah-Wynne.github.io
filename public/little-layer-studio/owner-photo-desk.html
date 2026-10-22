@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Local photo preparation tool for the owner of Little Layer Studio.">
+  <meta name="theme-color" content="#fbf7ef"><title>Owner photo desk | Little Layer Studio</title>
+  <script src="theme.js"></script><link rel="icon" href="assets/logo.png"><link rel="stylesheet" href="site.css"><link rel="stylesheet" href="theme.css"><script src="owner-photo-desk.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header"><a class="wordmark" href="index.html" aria-label="Little Layer Studio home"><img src="assets/logo.png" width="48" height="48" alt=""><span>little layer<span class="wordmark-bottom">studio.</span></span></a><nav aria-label="Owner tools"><a href="index.html#printed">View gallery</a><button type="button" class="theme-toggle" data-theme-toggle hidden>☾ Dark</button></nav></header>
+  <main class="section-width owner-main" id="main">
+    <div class="owner-heading"><p class="eyebrow">Owner-only publishing workflow</p><h1>Your little<br><span class="hand-highlight">photo desk.</span></h1><p>This page prepares gallery images entirely inside your browser. It does not upload a photo, store a password or send anything to a server. Publishing still requires signing in to Samantha’s GitHub account, so visitors cannot change the website.</p></div>
+    <div class="owner-grid">
+      <form class="owner-card" id="photo-prep-form">
+        <p class="eyebrow">Step 1 / Prepare</p><h2>Choose one finished-print photo.</h2>
+        <label for="owner-photo">Photo <span>(JPG, PNG, HEIC if your browser supports it)</span></label><input id="owner-photo" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" required>
+        <label for="photo-slug">Short filename</label><input id="photo-slug" required pattern="[a-z0-9]+(?:-[a-z0-9]+)*" maxlength="60" placeholder="purple-desk-organiser"><p class="small-note">Lowercase words and hyphens only.</p>
+        <label for="photo-title">Display title</label><input id="photo-title" required maxlength="80" placeholder="A tidy little corner">
+        <label for="photo-category">Small category label</label><input id="photo-category" required maxlength="45" placeholder="Desk favourites">
+        <label for="photo-description">Short description</label><textarea id="photo-description" required maxlength="220" rows="3" placeholder="A practical organiser in a bright colour combination."></textarea>
+        <label for="photo-alt">Photo description for screen readers</label><textarea id="photo-alt" required maxlength="240" rows="3" placeholder="A purple printed desk organiser holding pens on a white desk"></textarea>
+        <button class="button primary" type="submit">Prepare my gallery files ↓</button>
+        <p class="owner-status" id="owner-status" role="status" aria-live="polite"></p>
+      </form>
+      <section class="owner-card owner-output" id="owner-output" hidden>
+        <p class="eyebrow">Step 2 / Download</p><h2>Your files are ready.</h2>
+        <div class="owner-preview"><img id="owner-preview" alt=""></div>
+        <div class="owner-downloads"><a class="button dark" id="download-small" download>640px WebP ↓</a><a class="button dark" id="download-large" download>1280px WebP ↓</a><a class="button dark" id="download-snippet" download>Gallery card text ↓</a></div>
+        <p class="small-note">The generated WebP copies remove the original photo metadata. Keep your original safely on your own device.</p>
+        <p class="eyebrow owner-publish-label">Step 3 / Publish with GitHub</p>
+        <ol class="owner-steps">
+          <li>Sign in to <strong>Samantha-Hannah-Wynne</strong> on GitHub.</li>
+          <li><a href="https://github.com/Samantha-Hannah-Wynne/Samantha-Hannah-Wynne.github.io/upload/main/public/little-layer-studio/assets/prints">Upload both WebP files to the prints folder ↗</a> and commit them.</li>
+          <li>Open the downloaded gallery-card text and copy it.</li>
+          <li><a href="https://github.com/Samantha-Hannah-Wynne/Samantha-Hannah-Wynne.github.io/edit/main/public/little-layer-studio/index.html">Edit the studio home page on GitHub ↗</a>, search for <code>OWNER PHOTO CARDS</code>, paste the card immediately above that marker, then commit.</li>
+          <li>GitHub Pages will rebuild the website automatically. Refresh the gallery after about a minute.</li>
+        </ol>
+        <p class="concept-notice"><strong>Only publish your own photos.</strong> Check the title, description and alt text before committing. Never paste a GitHub password or access token into this page.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer section-width"><a class="wordmark" href="index.html"><img src="assets/logo.png" width="42" height="42" alt=""><span>little layer<span class="wordmark-bottom">studio.</span></span></a><p>Local preparation only.<br>Publishing stays protected by GitHub sign-in.</p><div><a href="index.html#printed">View the live gallery</a></div></footer>
+</body></html>

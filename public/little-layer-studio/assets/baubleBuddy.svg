@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-label="Original digital mockup of two playful articulated Christmas bauble decorations">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#efe0e8"/><stop offset="1" stop-color="#e1eee3"/></linearGradient>
+  <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff6d72"/><stop offset="1" stop-color="#b91f45"/></linearGradient>
+  <linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7ed38b"/><stop offset="1" stop-color="#25704b"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0a8"/><stop offset="1" stop-color="#d89931"/></linearGradient>
+  <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#39243a" flood-opacity=".22"/></filter>
+</defs>
+<rect width="1200" height="560" rx="34" fill="url(#bg)"/>
+<circle cx="102" cy="84" r="7" fill="#fff" opacity=".7"/><circle cx="1090" cy="135" r="10" fill="#fff" opacity=".65"/><circle cx="1025" cy="445" r="6" fill="#fff" opacity=".7"/>
+<g filter="url(#shadow)">
+      <g transform="translate(260 90)"><circle cx="160" cy="170" r="128" fill="url(#red)"/><rect x="120" y="24" width="80" height="55" rx="18" fill="url(#gold)"/><path d="M160 24V0" stroke="#926228" stroke-width="12"/><circle cx="120" cy="160" r="11" fill="#fff"/><circle cx="200" cy="160" r="11" fill="#fff"/><path d="M118 220q42 35 84 0" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round"/><path d="M75 284q-52 50-34 112M245 284q52 50 34 112" fill="none" stroke="#ab2848" stroke-width="25" stroke-linecap="round"/></g>
+      <g transform="translate(650 90)"><circle cx="160" cy="170" r="128" fill="url(#green)"/><rect x="120" y="24" width="80" height="55" rx="18" fill="url(#gold)"/><path d="M160 24V0" stroke="#926228" stroke-width="12"/><circle cx="120" cy="160" r="11" fill="#fff"/><circle cx="200" cy="160" r="11" fill="#fff"/><path d="M118 220q42 35 84 0" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round"/><path d="M75 284q-52 50-34 112M245 284q52 50 34 112" fill="none" stroke="#276645" stroke-width="25" stroke-linecap="round"/></g></g>
+</svg>

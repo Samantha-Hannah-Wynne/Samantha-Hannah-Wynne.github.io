@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-label="Original digital mockup of a colourful LED Christmas village">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dcebf1"/><stop offset="1" stop-color="#ede3f2"/></linearGradient>
+  <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff6d72"/><stop offset="1" stop-color="#b91f45"/></linearGradient>
+  <linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7ed38b"/><stop offset="1" stop-color="#25704b"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0a8"/><stop offset="1" stop-color="#d89931"/></linearGradient>
+  <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#39243a" flood-opacity=".22"/></filter>
+</defs>
+<rect width="1200" height="560" rx="34" fill="url(#bg)"/>
+<circle cx="102" cy="84" r="7" fill="#fff" opacity=".7"/><circle cx="1090" cy="135" r="10" fill="#fff" opacity=".65"/><circle cx="1025" cy="445" r="6" fill="#fff" opacity=".7"/>
+<g filter="url(#shadow)">
+      <path d="M90 435h1020" stroke="#fff" stroke-width="32" stroke-linecap="round"/>
+      <g transform="translate(135 155)"><path d="M0 105 120 0l120 105v230H0z" fill="#bb4a5f"/><path d="M45 190h55v145H45zm105-35h48v62h-48z" fill="#ffe79d"/><path d="M-18 110 120-12l138 122" fill="none" stroke="#fff" stroke-width="24" stroke-linecap="round"/></g>
+      <g transform="translate(475 115)"><path d="M0 145 145 0l145 145v230H0z" fill="#497c63"/><path d="M105 235h70v140h-70zm-55-18h45v62H50zm145 0h45v62h-45z" fill="#ffe79d"/><path d="M-18 150 145-12l163 162" fill="none" stroke="#fff" stroke-width="24" stroke-linecap="round"/></g>
+      <g transform="translate(850 180)"><path d="M0 85 105 0l105 85v185H0z" fill="#d69b3d"/><path d="M76 170h58v100H76z" fill="#ffe79d"/><path d="M-15 90 105-10 225 90" fill="none" stroke="#fff" stroke-width="22" stroke-linecap="round"/></g>
+      <circle cx="410" cy="396" r="45" fill="#fff"/><circle cx="410" cy="330" r="32" fill="#fff"/><circle cx="400" cy="323" r="5" fill="#44384d"/><circle cx="420" cy="323" r="5" fill="#44384d"/></g>
+</svg>

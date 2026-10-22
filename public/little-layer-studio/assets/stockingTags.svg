@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-label="Original digital mockup of personalised red and green Christmas stocking tags">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7e8e0"/><stop offset="1" stop-color="#ead9f2"/></linearGradient>
+  <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff6d72"/><stop offset="1" stop-color="#b91f45"/></linearGradient>
+  <linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7ed38b"/><stop offset="1" stop-color="#25704b"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0a8"/><stop offset="1" stop-color="#d89931"/></linearGradient>
+  <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#39243a" flood-opacity=".22"/></filter>
+</defs>
+<rect width="1200" height="560" rx="34" fill="url(#bg)"/>
+<circle cx="102" cy="84" r="7" fill="#fff" opacity=".7"/><circle cx="1090" cy="135" r="10" fill="#fff" opacity=".65"/><circle cx="1025" cy="445" r="6" fill="#fff" opacity=".7"/>
+<g filter="url(#shadow)">
+      <path d="M195 150h230v118c0 94-76 170-170 170h-60z" fill="url(#red)"/><path d="M195 150h230v58H195z" fill="#fff6eb"/>
+      <text x="310" y="300" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="42" font-weight="700">AOIFE</text>
+      <path d="M565 150h230v118c0 94-76 170-170 170h-60z" fill="url(#green)"/><path d="M565 150h230v58H565z" fill="#fff6eb"/>
+      <text x="680" y="300" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="42" font-weight="700">NOAH</text>
+      <circle cx="920" cy="275" r="84" fill="url(#gold)"/><path d="M920 165v-45" stroke="#805327" stroke-width="12" stroke-linecap="round"/>
+      <text x="920" y="290" text-anchor="middle" fill="#6b3b2d" font-family="Arial,sans-serif" font-size="30" font-weight="700">JOY</text></g>
+</svg>

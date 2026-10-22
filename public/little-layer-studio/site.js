@@ -22,9 +22,17 @@ const products = [
   { id: "ocean", name: "Ocean Crew", category: "toys", price: 8, unit: "set of 4", description: "Four sea-creature concepts. A little ocean of imagination." },
   { id: "farm", name: "Farm Friends", category: "toys", price: 10, unit: "set of 5", description: "Five farm-animal concepts. A whole lot of countryside cute." },
   { id: "stamps", name: "Squish & Stamp", category: "toys", price: 6, unit: "set of 4", description: "Four play-dough stamp concepts. Dough not included." },
-  { id: "colour", name: "Colour-Me Dinos", category: "toys", price: 6, unit: "set of 3", description: "Three flat dinosaur colouring-shape concepts. Pens not included." }
+  { id: "colour", name: "Colour-Me Dinos", category: "toys", price: 6, unit: "set of 3", description: "Three flat dinosaur colouring-shape concepts. Pens not included." },
+  { id: "wallPlanter", name: "Colour-on-the-Wall Planter", category: "plants", price: 8, unit: "each", description: "One ribbed wall-mounted planter with a removable drip tray and printed mount. Plant and wall fixing not included; use a suitable fixing for your wall.", image: "assets/prints/plant-wall-colour-1280.webp", imageAlt: "Five colourful ribbed 3D-printed wall planters holding plants", isPhoto: true },
+  { id: "deskPots", name: "Little Orbit Pot Trio", category: "plants", price: 12, unit: "set of 3", description: "Three mini spherical desk pots in a coordinated colour set. Plants are not included.", image: "assets/prints/plant-desk-trio-1280.webp", imageAlt: "Three black spherical mini desk pots with coloured interiors and small plants", isPhoto: true },
+  { id: "stockingTags", name: "Stocking Stars", category: "christmas", price: 4, unit: "each", description: "One personalised stocking or gift tag in your chosen festive colours. Name length and model licence must be confirmed." , image: "assets/stockingTags.svg" },
+  { id: "snowflakes", name: "Snowfall Set", category: "christmas", price: 6, unit: "set of 4", description: "Four lightweight hanging snowflake decorations in a coordinated colour mix. Ribbon not included.", image: "assets/snowflakes.svg" },
+  { id: "treeTrio", name: "Merry Little Trees", category: "christmas", price: 7, unit: "set of 3", description: "Three modern tree decorations for a shelf, table or hanging display. Final format depends on the chosen model.", image: "assets/treeTrio.svg" },
+  { id: "napkinRings", name: "Christmas Table Twinkles", category: "christmas", price: 8, unit: "set of 4", description: "Four festive napkin rings with a mix of tree and star details. Decorative use only; napkins not included.", image: "assets/napkinRings.svg" },
+  { id: "winterVillage", name: "A Village All Aglow", category: "christmas", price: 12, unit: "display", description: "One small Christmas village display for battery LED lighting. LED light not included; never use a real flame.", image: "assets/winterVillage.svg" },
+  { id: "baubleBuddy", name: "Bauble Buddies", category: "christmas", price: 5, unit: "each", description: "One playful articulated bauble-style decoration. Decorative item, not a children's toy. Model licence must be confirmed.", image: "assets/baubleBuddy.svg" }
 ];
-const categories = { personalised: "Personalised", halloween: "Halloween", diwali: "Diwali", toys: "Playful ideas" };
+const categories = { personalised: "Personalised", halloween: "Halloween", diwali: "Diwali", toys: "Playful ideas", plants: "Plant pots", christmas: "Christmas" };
 const whatsappNumber = "919840684483";
 const grid = document.querySelector("#product-grid");
 const dialog = document.querySelector("#image-dialog");
@@ -59,14 +67,14 @@ function element(tag, className, content) {
 
 function openPreview(trigger, image, title, isPhoto = false) {
   const dialogImage = document.querySelector("#dialog-image");
-  dialogImage.src = isPhoto ? trigger.href : image.src;
+  dialogImage.src = isPhoto ? (trigger.href || image.currentSrc || image.src) : image.src;
   dialogImage.alt = image.alt;
   dialogImage.width = image.width;
   dialogImage.height = image.height;
   dialog.classList.toggle("photo-preview", isPhoto);
   document.querySelector("#dialog-title").textContent = title;
   document.querySelector("#dialog-description").textContent = isPhoto
-    ? "My own photo of a finished print. Past project shown for inspiration, not a sale listing."
+    ? "My own photo of a finished print. Check the card details for whether it is a past project or a priced idea."
     : "Original digital mockup, not a photo of a finished print.";
   trigger.focus({ preventScroll: true });
   dialog.showModal();
@@ -79,17 +87,18 @@ function createCard(product) {
   picture.type = "button";
   picture.setAttribute("aria-label", `Enlarge ${product.name} digital mockup`);
   const image = element("img");
-  image.src = `assets/${product.id}.png`;
-  image.alt = `${product.name}: original digital mockup, not a finished-print photograph`;
+  image.src = product.image || `assets/${product.id}.png`;
+  image.alt = product.imageAlt || `${product.name}: original digital mockup, not a finished-print photograph`;
   image.width = 1200;
   image.height = 560;
   image.loading = "lazy";
+  picture.classList.toggle("real-product-image", Boolean(product.isPhoto));
   const enlarge = element("span", "enlarge", "＋");
   enlarge.setAttribute("aria-hidden", "true");
   picture.append(image, enlarge);
-  picture.addEventListener("click", () => openPreview(picture, image, product.name));
+  picture.addEventListener("click", () => openPreview(picture, image, product.name, product.isPhoto));
   const body = element("div", "product-body");
-  body.append(element("p", "product-category", `${categories[product.category]} / concept`), element("h3", "", product.name), element("p", "product-description", product.description));
+  body.append(element("p", "product-category", `${categories[product.category]} / ${product.isPhoto ? "finished print" : "concept"}`), element("h3", "", product.name), element("p", "product-description", product.description));
   const footer = element("div", "product-footer");
   const price = element("div", "indicative-price", `€${product.price}`);
   price.append(element("small", "", `Indicative · ${product.unit}`));
@@ -136,7 +145,7 @@ function renderEstimate() {
     const row = element("li", "estimate-item");
     row.dataset.bundleProduct = product.id;
     const image = element("img");
-    image.src = `assets/${product.id}.png`;
+    image.src = product.image || `assets/${product.id}.png`;
     image.alt = "";
     image.width = 80;
     image.height = 48;
@@ -196,7 +205,7 @@ function filterProducts(category) {
     button.classList.toggle("active", selected);
     button.setAttribute("aria-pressed", String(selected));
   });
-  document.querySelector("#result-count").textContent = `${count} design concepts${category === "all" ? " across four collections" : ` in ${categories[category]}`}`;
+  document.querySelector("#result-count").textContent = `${count} priced ideas${category === "all" ? ` across ${Object.keys(categories).length} collections` : ` in ${categories[category]}`}`;
 }
 
 if (grid) {

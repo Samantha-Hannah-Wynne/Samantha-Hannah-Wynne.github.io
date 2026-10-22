@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-label="Original digital mockup of four Christmas napkin rings with tree and star details">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f9e7df"/><stop offset="1" stop-color="#e2eee5"/></linearGradient>
+  <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff6d72"/><stop offset="1" stop-color="#b91f45"/></linearGradient>
+  <linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7ed38b"/><stop offset="1" stop-color="#25704b"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0a8"/><stop offset="1" stop-color="#d89931"/></linearGradient>
+  <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#39243a" flood-opacity=".22"/></filter>
+</defs>
+<rect width="1200" height="560" rx="34" fill="url(#bg)"/>
+<circle cx="102" cy="84" r="7" fill="#fff" opacity=".7"/><circle cx="1090" cy="135" r="10" fill="#fff" opacity=".65"/><circle cx="1025" cy="445" r="6" fill="#fff" opacity=".7"/>
+<g filter="url(#shadow)">
+      <g transform="translate(155 160)"><ellipse cx="90" cy="120" rx="82" ry="112" fill="none" stroke="#c54155" stroke-width="38"/><path d="m90-10 55 90h-33l43 67H25l43-67H35z" fill="#3a8a5c"/></g>
+      <g transform="translate(415 160)"><ellipse cx="90" cy="120" rx="82" ry="112" fill="none" stroke="#3a8a5c" stroke-width="38"/><path d="m90 0 20 58 61 2-48 37 17 59-50-34-50 34 17-59L9 60l61-2z" fill="#e5b149"/></g>
+      <g transform="translate(675 160)"><ellipse cx="90" cy="120" rx="82" ry="112" fill="none" stroke="#dba83d" stroke-width="38"/><path d="m90-10 55 90h-33l43 67H25l43-67H35z" fill="#b62e49"/></g>
+      <g transform="translate(935 160)"><ellipse cx="90" cy="120" rx="82" ry="112" fill="none" stroke="#8f68b1" stroke-width="38"/><path d="m90 0 20 58 61 2-48 37 17 59-50-34-50 34 17-59L9 60l61-2z" fill="#f0c658"/></g></g>
+</svg>
